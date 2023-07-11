@@ -1,0 +1,36 @@
+﻿<Window x:Class="ChristopherChandlerM8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChristopherChandlerM8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel Height="Auto" Width="Auto" LastChildFill="True">
+        
+        <Menu Height="23" Name="menu" Width="Auto" DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" x:Name="new" Click="txtNew"/>
+                <MenuItem Header="Open" Click="openFile"/>
+                <MenuItem Header="Save" IsEnabled="False" x:Name="save" Click="savetxt"/>
+                <MenuItem Header="Save As" Click="saveasTxt"/>
+                <MenuItem Header="Exit" x:Name="close" Click="exit"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="about"/>
+            </MenuItem>
+        </Menu>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <TextBox x:Name="box" Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" TextChanged="textChanged" AcceptsReturn="True"></TextBox>
+        </Grid>
+    </DockPanel>
+</Window>
